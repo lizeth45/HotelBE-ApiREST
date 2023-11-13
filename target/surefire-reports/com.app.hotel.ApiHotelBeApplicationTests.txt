@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.app.hotel.ApiHotelBeApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 61.672 s - in com.app.hotel.ApiHotelBeApplicationTests
