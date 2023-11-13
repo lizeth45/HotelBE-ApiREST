@@ -14,4 +14,28 @@ public class ReservaHabID implements Serializable {
 		this.idReservacion = idReservacion;
 	}
 
+	public ReservaHabID() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public int getCnsReserva() {
+		return cnsReserva;
+	}
+
+	public void setCnsReserva(int cnsReserva) {
+		this.cnsReserva = cnsReserva;
+	}
+
+	public int getIdReservacion() {
+		return idReservacion;
+	}
+
+	public void setIdReservacion(int idReservacion) {
+		this.idReservacion = idReservacion;
+	}
+	
+	
+	
+
 }
