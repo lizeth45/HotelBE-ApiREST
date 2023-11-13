@@ -13,7 +13,7 @@ import com.app.hotel.entity.Cancelacion;
 import com.app.hotel.service.ICancelacionService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "*")
 @RequestMapping("/hotelbe")
 public class CancelacionController {
 	
