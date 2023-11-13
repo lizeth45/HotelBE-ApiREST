@@ -1,17 +1,17 @@
 package com.app.hotel.controller;
 
-import java.sql.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.app.hotel.entity.NewReservaHabPL;
 import com.app.hotel.entity.ReservaHab;
 import com.app.hotel.service.IReservacionHabService;
 
@@ -23,17 +23,13 @@ public class ReservaHabController {
 	@Autowired 
 	private IReservacionHabService servReservacionHab;
 	
-	@GetMapping("reservasHab/")
+	@GetMapping("/reservasHab")
 	public List<ReservaHab> showAll(){
 		return servReservacionHab.consultaGral();
 	}
 	
-	@PutMapping("reservasHab/newReservaHab/{pfechaLlegada}/{pfechaSalida}/{ptipoHabitacion}")
-	public ResponseEntity<Integer> newReservaHab(
-		@RequestParam("pfechaLlegada") Date fechaLlegada,
-		@RequestParam("pfechaSalida") Date fechaSalida,
-		@RequestParam("ptipoHabitacion") String tipoHab
-    ){
-        return ResponseEntity.ok(servReservacionHab.newReservaHab(fechaLlegada, fechaSalida, tipoHab));
+	@PostMapping("/reservasHab/newReservaHab")
+	public ResponseEntity<Integer> newReservaHab(@RequestBody NewReservaHabPL obj){
+        return ResponseEntity.ok(servReservacionHab.newReservaHab(obj.getFechaLlegada(), obj.getFechaSalida(), obj.getTipoHab()));
     }
 }
