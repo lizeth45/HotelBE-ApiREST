@@ -19,7 +19,7 @@ import com.app.hotel.entity.TipoHabitacion;
 import com.app.hotel.service.ITipoHabitacionService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "*")
 @RequestMapping("/hotelbe")
 public class THabitacionController {
 

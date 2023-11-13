@@ -15,7 +15,7 @@ import com.app.hotel.entity.Empleado;
 import com.app.hotel.service.IEmpleadoService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "*")
 @RequestMapping("/hotelbe")
 public class EmpleadoController {
 

@@ -19,7 +19,7 @@ import com.app.hotel.entity.Facturacion;
 import com.app.hotel.service.IFacturacionService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "*")
 @RequestMapping("/hotelbe")
 public class FacturacionController {
 	
