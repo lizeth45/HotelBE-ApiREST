@@ -48,4 +48,15 @@ public interface IReservacionjpa extends JpaRepository<Reservacion, Integer> {
 	 
 	 @Query("UPDATE Reservacion r SET r.estado = 'ACTIVA' WHERE r.idReservacion = :idReservacion")
 	    int actualizarEstadoReservacion( @Param("idReservacion") int idReservacion);
+	 
+	 @Query(value="SELECT COUNT(*) "
+	 		+ " FROM habitacion h"
+	 		+ " WHERE h.id_thab = :idthab"
+	 		+ " AND h.id_hab NOT IN ("
+	 		+ " SELECT rh.id_hab"
+	 		+ " FROM reserva_hab rh"
+	 		+ " WHERE rh.fecha_llegada <= :fecha_salida"
+	 		+ " AND rh.fecha_salida >= :fecha_llegada"
+	 		+ " )", nativeQuery=true)
+	    int disponibilidad( @Param("idthab") int idTHab, @Param("fecha_salida") Date fechSalida, @Param("fecha_llegada") Date fechLlegada);
 }
