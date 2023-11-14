@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.app.hotel.dto.ReservacionesPendDia;
 import com.app.hotel.entity.Reservacion;
 import com.app.hotel.jpa.IReservacionjpa;
 
@@ -28,5 +29,15 @@ public class ReservacionService implements IReservacionService {
 	@Override
 	public List<Reservacion> consultaGralReservacion(){
 		return repoReserva.findAll();
+	}
+	
+	@Override
+	public List<ReservacionesPendDia> obtenerReservasPendientesHoy(){
+		return repoReserva.obtenerReservasPendientesHoy();
+	}
+	
+	@Override
+	public Integer actualizarEstadoReservacion(int idReserva) {
+		return repoReserva.actualizarEstadoReservacion(idReserva);
 	}
 }

@@ -11,7 +11,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.IdClass;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.MapsId;
 import jakarta.persistence.Table;
 
 @Entity
@@ -48,8 +47,7 @@ public class ReservaHab {
 
 	//Relacion con su entidad fuerte reservacion <= reservaHab
 	@ManyToOne
-    @MapsId("idReservacion") //Entity Class
-    @JoinColumn(name = "id_reserva")  //BD
+    @JoinColumn(name = "id_reserva", referencedColumnName="id_reserva")  //BD
     private Reservacion reservacion;
 
 

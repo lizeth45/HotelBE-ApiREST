@@ -2,12 +2,15 @@ package com.app.hotel.jpa;
 
 
 import java.sql.Date;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.query.Procedure;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import com.app.hotel.dto.ReservacionesPendDia;
 import com.app.hotel.entity.Reservacion;
 
 @Repository
@@ -36,4 +39,13 @@ public interface IReservacionjpa extends JpaRepository<Reservacion, Integer> {
 	        @Param("resul") Integer resultado
 	    );
 
+	 @Query(value="select re.id_reserva, CONCAT(c.nombre, ' ', c.ap_pat, ' ', c.ap_mat) "+
+			 "as cliente, c.telefono, c.email from clientes c inner join reservacion re "+
+			 "on c.id_cliente=re.id_cliente where re.estado = 'PENDIENTE' and re.id_reserva in "+
+			 " (SELECT DISTINCT(id_reserva) from reserva_hab where fecha_llegada=CURRENT_DATE)", nativeQuery = true)
+     List<ReservacionesPendDia> obtenerReservasPendientesHoy();
+	 
+	 
+	 @Query("UPDATE Reservacion r SET r.estado = 'ACTIVA' WHERE r.idReservacion = :idReservacion")
+	    int actualizarEstadoReservacion( @Param("idReservacion") int idReservacion);
 }

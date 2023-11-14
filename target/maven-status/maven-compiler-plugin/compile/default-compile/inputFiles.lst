@@ -5,12 +5,14 @@ C:\Program Files\sts-4.14.1.RELEASE\APIHotelBE\src\main\java\com\app\hotel\jpa\I
 C:\Program Files\sts-4.14.1.RELEASE\APIHotelBE\src\main\java\com\app\hotel\entity\TipoHabitacion.java
 C:\Program Files\sts-4.14.1.RELEASE\APIHotelBE\src\main\java\com\app\hotel\entity\Habitacion.java
 C:\Program Files\sts-4.14.1.RELEASE\APIHotelBE\src\main\java\com\app\hotel\service\ReservacionService.java
+C:\Program Files\sts-4.14.1.RELEASE\APIHotelBE\src\main\java\com\app\hotel\service\IReservacionHabService.java
 C:\Program Files\sts-4.14.1.RELEASE\APIHotelBE\src\main\java\com\app\hotel\service\FacturacionService.java
 C:\Program Files\sts-4.14.1.RELEASE\APIHotelBE\src\main\java\com\app\hotel\jpa\ICancelacionjpa.java
 C:\Program Files\sts-4.14.1.RELEASE\APIHotelBE\src\main\java\com\app\hotel\jpa\IHabitacionjpa.java
 C:\Program Files\sts-4.14.1.RELEASE\APIHotelBE\src\main\java\com\app\hotel\entity\ReservaHabID.java
 C:\Program Files\sts-4.14.1.RELEASE\APIHotelBE\src\main\java\com\app\hotel\jpa\IFacturacionjpa.java
 C:\Program Files\sts-4.14.1.RELEASE\APIHotelBE\src\main\java\com\app\hotel\service\ICancelacionService.java
+C:\Program Files\sts-4.14.1.RELEASE\APIHotelBE\src\main\java\com\app\hotel\controller\ReservaHabController.java
 C:\Program Files\sts-4.14.1.RELEASE\APIHotelBE\src\main\java\com\app\hotel\entity\Estancia.java
 C:\Program Files\sts-4.14.1.RELEASE\APIHotelBE\src\main\java\com\app\hotel\entity\ReservaHab.java
 C:\Program Files\sts-4.14.1.RELEASE\APIHotelBE\src\main\java\com\app\hotel\service\ClienteService.java
@@ -20,6 +22,7 @@ C:\Program Files\sts-4.14.1.RELEASE\APIHotelBE\src\main\java\com\app\hotel\servi
 C:\Program Files\sts-4.14.1.RELEASE\APIHotelBE\src\main\java\com\app\hotel\jpa\IClientejpa.java
 C:\Program Files\sts-4.14.1.RELEASE\APIHotelBE\src\main\java\com\app\hotel\service\TipoHabitacionService.java
 C:\Program Files\sts-4.14.1.RELEASE\APIHotelBE\src\main\java\com\app\hotel\controller\ReservacionController.java
+C:\Program Files\sts-4.14.1.RELEASE\APIHotelBE\src\main\java\com\app\hotel\dto\ReservacionesPendDia.java
 C:\Program Files\sts-4.14.1.RELEASE\APIHotelBE\src\main\java\com\app\hotel\service\IEstanciaService.java
 C:\Program Files\sts-4.14.1.RELEASE\APIHotelBE\src\main\java\com\app\hotel\ApiHotelBeApplication.java
 C:\Program Files\sts-4.14.1.RELEASE\APIHotelBE\src\main\java\com\app\hotel\service\EmpleadoService.java
@@ -36,6 +39,7 @@ C:\Program Files\sts-4.14.1.RELEASE\APIHotelBE\src\main\java\com\app\hotel\jpa\I
 C:\Program Files\sts-4.14.1.RELEASE\APIHotelBE\src\main\java\com\app\hotel\entity\Cancelacion.java
 C:\Program Files\sts-4.14.1.RELEASE\APIHotelBE\src\main\java\com\app\hotel\entity\ServiciosCons.java
 C:\Program Files\sts-4.14.1.RELEASE\APIHotelBE\src\main\java\com\app\hotel\service\IEmpleadoService.java
+C:\Program Files\sts-4.14.1.RELEASE\APIHotelBE\src\main\java\com\app\hotel\dto\NewReservaHabPL.java
 C:\Program Files\sts-4.14.1.RELEASE\APIHotelBE\src\main\java\com\app\hotel\entity\Facturacion.java
 C:\Program Files\sts-4.14.1.RELEASE\APIHotelBE\src\main\java\com\app\hotel\entity\Cliente.java
 C:\Program Files\sts-4.14.1.RELEASE\APIHotelBE\src\main\java\com\app\hotel\service\HabitacionService.java
@@ -45,8 +49,10 @@ C:\Program Files\sts-4.14.1.RELEASE\APIHotelBE\src\main\java\com\app\hotel\servi
 C:\Program Files\sts-4.14.1.RELEASE\APIHotelBE\src\main\java\com\app\hotel\controller\ServicioController.java
 C:\Program Files\sts-4.14.1.RELEASE\APIHotelBE\src\main\java\com\app\hotel\entity\Servicio.java
 C:\Program Files\sts-4.14.1.RELEASE\APIHotelBE\src\main\java\com\app\hotel\entity\Empleado.java
+C:\Program Files\sts-4.14.1.RELEASE\APIHotelBE\src\main\java\com\app\hotel\service\ReservacionHabService.java
 C:\Program Files\sts-4.14.1.RELEASE\APIHotelBE\src\main\java\com\app\hotel\controller\ClienteController.java
 C:\Program Files\sts-4.14.1.RELEASE\APIHotelBE\src\main\java\com\app\hotel\jpa\IServicio.java
 C:\Program Files\sts-4.14.1.RELEASE\APIHotelBE\src\main\java\com\app\hotel\service\ITipoHabitacionService.java
 C:\Program Files\sts-4.14.1.RELEASE\APIHotelBE\src\main\java\com\app\hotel\controller\FacturacionController.java
 C:\Program Files\sts-4.14.1.RELEASE\APIHotelBE\src\main\java\com\app\hotel\service\IServiciosService.java
+C:\Program Files\sts-4.14.1.RELEASE\APIHotelBE\src\main\java\com\app\hotel\dto\NewReservacionPL.java

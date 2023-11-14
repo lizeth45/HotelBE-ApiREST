@@ -1,5 +1,4 @@
 package com.app.hotel.entity;
-import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -8,7 +7,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -28,15 +26,11 @@ public class Reservacion {
 	@JoinColumn(name = "id_cliente", referencedColumnName = "id_cliente")
 	private Cliente cliente;
 
-	//Relacion con su detalle reservaHab => reservacion
-	@OneToMany(mappedBy = "reservacion")
-    private List<ReservaHab> reservaHabitacion;
 
-	public Reservacion(String estado, Cliente cliente, List<ReservaHab> reservaHabitacion) {
+	public Reservacion(String estado, Cliente cliente) {
 		super();
 		this.estado = estado;
 		this.cliente = cliente;
-		this.reservaHabitacion = reservaHabitacion;
 	}
 
 	public Reservacion() {
@@ -67,14 +61,4 @@ public class Reservacion {
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
-
-	public List<ReservaHab> getReservaHabitacion() {
-		return reservaHabitacion;
-	}
-
-	public void setReservaHabitacion(List<ReservaHab> reservaHabitacion) {
-		this.reservaHabitacion = reservaHabitacion;
-	}
-
-
 }

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.app.hotel.entity.NewReservaHabPL;
+import com.app.hotel.dto.NewReservaHabPL;
 import com.app.hotel.entity.ReservaHab;
 import com.app.hotel.service.IReservacionHabService;
 

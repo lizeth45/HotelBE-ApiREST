@@ -3,6 +3,7 @@ package com.app.hotel.service;
 import java.sql.Date;
 import java.util.List;
 
+import com.app.hotel.dto.ReservacionesPendDia;
 import com.app.hotel.entity.Reservacion;
 
 public interface IReservacionService {
@@ -13,5 +14,9 @@ public interface IReservacionService {
 			String telefonoCli, String rfcCli, String email, String direccion);
 
 	List<Reservacion> consultaGralReservacion();
+
+	List<ReservacionesPendDia> obtenerReservasPendientesHoy();
+
+	Integer actualizarEstadoReservacion(int idReserva);
 
 }
