@@ -35,6 +35,14 @@ public class ReservacionController {
 		return servReservacion.consultaGralReservacion();
 	}
 	
+	@GetMapping("/reservas/disponibilidad/{idthab}/{fechaSal}/{fechaLlegada}")
+	public Integer disponibilidad(@PathVariable("fechaLlegada") Date fechaLlegada,
+			@PathVariable("fechaSal") Date fechaSalida,
+			@PathVariable("idthab") int tipoHabitacion) {
+		return servReservacion.disponibilidad(tipoHabitacion, fechaSalida, fechaLlegada);
+		
+	}
+	
 	@GetMapping("/reservas/pendientesdDia")
 	public List<ReservacionesPendDia> obtenerReservasPendientesHoy(){
 		return servReservacion.obtenerReservasPendientesHoy();

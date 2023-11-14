@@ -19,4 +19,6 @@ public interface IReservacionService {
 
 	Integer actualizarEstadoReservacion(int idReserva);
 
+	Integer disponibilidad(int idthab, Date fechSalida, Date fechLlegada);
+
 }
