@@ -45,8 +45,9 @@ public interface IReservacionjpa extends JpaRepository<Reservacion, Integer> {
      List<ReservacionesPendDia> obtenerReservasPendientesHoy();
 	 
 	 
-	 @Query("UPDATE Reservacion r SET r.estado = 'ACTIVA' WHERE r.idReservacion = :idReservacion")
-	    int actualizarEstadoReservacion( @Param("idReservacion") int idReservacion);
+	 
+	 @Query(value="call activarEstadoReservacion(:idReservacion, :res)", nativeQuery=true)
+	 String actualizarEstadoReservacion( @Param("idReservacion") int idReservacion, @Param("res") String res);
 	 
 	 @Query(value="SELECT COUNT(*) "
 	 		+ " FROM habitacion h"
@@ -58,4 +59,9 @@ public interface IReservacionjpa extends JpaRepository<Reservacion, Integer> {
 	 		+ " AND rh.fecha_salida >= :fecha_llegada"
 	 		+ " )", nativeQuery=true)
 	    int disponibilidad( @Param("idthab") int idTHab, @Param("fecha_salida") Date fechSalida, @Param("fecha_llegada") Date fechLlegada);
+
+	 
+	 @Query(value="select id_cliente from reservacion where id_reserva=:idReserva", nativeQuery=true)
+	 int obtIdClienteReserva(@Param("idReserva") int idReserva);
+
 }

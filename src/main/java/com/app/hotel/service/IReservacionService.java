@@ -17,8 +17,12 @@ public interface IReservacionService {
 
 	List<ReservacionesPendDia> obtenerReservasPendientesHoy();
 
-	Integer actualizarEstadoReservacion(int idReserva);
-
 	Integer disponibilidad(int idthab, Date fechSalida, Date fechLlegada);
+
+	Integer obtIdClienteReserva(int idReserva);
+
+//	ResponseEntity<Map<String, String>> actualizarEstadoReservacion(Reservacion obj, int idReserva);
+
+	String actualizarEstadoReservacion(int idReserva);
 
 }

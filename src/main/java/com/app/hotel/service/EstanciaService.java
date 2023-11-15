@@ -28,7 +28,15 @@ public class EstanciaService implements IEstanciaService{
 		return repoEstancia.buscarPorId(idEstancia);
 	}
 	
-	//Insertar una nueva estancia(pl)
+	
+	@Override
+	public ResponseEntity<Map<String, String>> newEstancia(Estancia obj) {
+		Map<String, String> okResponse = new HashMap<>();
+		okResponse.put("message", "Estancia registrada correctamente");
+	    okResponse.put("status", HttpStatus.CREATED.toString());
+	    repoEstancia.save(obj);
+		return new ResponseEntity<>(okResponse,HttpStatus.CREATED);
+	}
 	
 	@Override
 	public ResponseEntity<Map<String, String>> eliminarEstancia(int idEstancia) {		

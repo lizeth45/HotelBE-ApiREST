@@ -15,4 +15,6 @@ public interface IEstanciaService {
 
 	ResponseEntity<Map<String, String>> eliminarEstancia(int idEstancia);
 
+	ResponseEntity<Map<String, String>> newEstancia(Estancia obj);
+
 }

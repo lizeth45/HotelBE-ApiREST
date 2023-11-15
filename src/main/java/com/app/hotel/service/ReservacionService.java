@@ -37,12 +37,19 @@ public class ReservacionService implements IReservacionService {
 	}
 	
 	@Override
-	public Integer actualizarEstadoReservacion(int idReserva) {
-		return repoReserva.actualizarEstadoReservacion(idReserva);
+	public String actualizarEstadoReservacion(int idReserva) {
+		return repoReserva.actualizarEstadoReservacion(idReserva, null);
 	}
+	
+	
 	
 	@Override
 	public Integer disponibilidad(int idthab, Date fechSalida, Date fechLlegada) {
 		return repoReserva.disponibilidad(idthab, fechSalida, fechLlegada);
+	}
+	
+	@Override
+	public Integer obtIdClienteReserva(int idReserva) {
+		return repoReserva.obtIdClienteReserva(idReserva);
 	}
 }
