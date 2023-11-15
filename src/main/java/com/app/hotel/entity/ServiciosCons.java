@@ -20,12 +20,11 @@ import jakarta.persistence.Table;
 public class ServiciosCons {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id_servcons")
 	private int idServcons;
 
 	@Id
-	@Column(name="id_estancia")
+	@Column(name = "id_estancia")
 	private int idEstancia;
 
 	@Column(name="hora")

@@ -6,8 +6,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.app.hotel.dto.ReservacionesPendDia;
-import com.app.hotel.dto.ReservasPendientesData;
 import com.app.hotel.entity.Reservacion;
 import com.app.hotel.jpa.IReservacionjpa;
 
@@ -53,7 +51,7 @@ public class ReservacionService implements IReservacionService {
 	}
 	
 	@Override
-	public List<Object[]> reservasPendientesAll(){
+	public List<Reservacion> reservasPendientesAll(){
 		return repoReserva.reservasPendientesAll();
 	}
 }

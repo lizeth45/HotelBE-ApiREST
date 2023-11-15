@@ -8,9 +8,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-
-import com.app.hotel.dto.ReservacionesPendDia;
-import com.app.hotel.dto.ReservasPendientesData;
 import com.app.hotel.entity.Reservacion;
 
 @Repository
@@ -66,22 +63,23 @@ public interface IReservacionjpa extends JpaRepository<Reservacion, Integer> {
 	 int obtIdClienteReserva(@Param("idReserva") int idReserva);
 
 	 
-	 @Query(value="SELECT "
-	 		+ "    r.id_reserva,"
-	 		+ "    r.estado,"
-	 		+ "    c.nombre AS nombre_cliente,"
-	 		+ "    c.ap_pat,"
-	 		+ "    c.ap_mat,"
-	 		+ "    COUNT(rh.id_hab) AS cantidad_habitaciones "
-	 		+ "FROM"
-	 		+ "    reservacion r "
-	 		+ "JOIN"
-	 		+ "    clientes c ON r.id_cliente = c.id_cliente "
-	 		+ "LEFT JOIN"
-	 		+ "    reserva_hab rh ON r.id_reserva = rh.id_reserva "
-	 		+ "WHERE"
-	 		+ "    r.estado = 'PENDIENTE' "
-	 		+ "GROUP BY"
-	 		+ "    r.id_reserva, r.estado, c.nombre, c.ap_pat, c.ap_mat", nativeQuery=true)
-	 List<Object[]> reservasPendientesAll();
+//	 @Query(value="SELECT "
+//	 		+ "    r.id_reserva,"
+//	 		+ "    r.estado,"
+//	 		+ "    c.nombre AS nombre_cliente,"
+//	 		+ "    c.ap_pat,"
+//	 		+ "    c.ap_mat,"
+//	 		+ "    COUNT(rh.id_hab) AS cantidad_habitaciones "
+//	 		+ "FROM"
+//	 		+ "    reservacion r "
+//	 		+ "JOIN"
+//	 		+ "    clientes c ON r.id_cliente = c.id_cliente "
+//	 		+ "LEFT JOIN"
+//	 		+ "    reserva_hab rh ON r.id_reserva = rh.id_reserva "
+//	 		+ "WHERE"
+//	 		+ "    r.estado = 'PENDIENTE' "
+//	 		+ "GROUP BY"
+//	 		+ "    r.id_reserva, r.estado, c.nombre, c.ap_pat, c.ap_mat", nativeQuery=true)
+	 @Query("SELECT c FROM Reservacion c WHERE c.estado = 'PENDIENTE'")
+	 List<Reservacion> reservasPendientesAll();
 }

@@ -3,8 +3,6 @@ package com.app.hotel.service;
 import java.sql.Date;
 import java.util.List;
 
-import com.app.hotel.dto.ReservacionesPendDia;
-import com.app.hotel.dto.ReservasPendientesData;
 import com.app.hotel.entity.Reservacion;
 
 public interface IReservacionService {
@@ -26,6 +24,6 @@ public interface IReservacionService {
 
 	String actualizarEstadoReservacion(int idReserva);
 
-	List<Object[]> reservasPendientesAll();
+	List<Reservacion> reservasPendientesAll();
 
 }
