@@ -11,6 +11,26 @@ public class ServiciosConsID implements Serializable {
 		this.idServcons = idServcons;
 		this.idEstancia = idEstancia;
 	}
+	
+	
+	public ServiciosConsID() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+	public int getIdServcons() {
+		return idServcons;
+	}
+	public void setIdServcons(int idServcons) {
+		this.idServcons = idServcons;
+	}
+	public int getIdEstancia() {
+		return idEstancia;
+	}
+	public void setIdEstancia(int idEstancia) {
+		this.idEstancia = idEstancia;
+	}
 
 
 }

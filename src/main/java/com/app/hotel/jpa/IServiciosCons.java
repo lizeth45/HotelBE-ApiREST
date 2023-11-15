@@ -1,6 +1,8 @@
 package com.app.hotel.jpa;
 
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -16,4 +18,6 @@ public interface IServiciosCons extends JpaRepository <ServiciosCons,ServiciosCo
         @Param("desc_serviciop") String descServicio,
         @Param("pres") Integer cantidadSolicitada
     );
+	
+	List<ServiciosCons> findAll();
 }
