@@ -10,6 +10,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import com.app.hotel.dto.ReservacionesPendDia;
+import com.app.hotel.dto.ReservasPendientesData;
 import com.app.hotel.entity.Reservacion;
 
 @Repository
@@ -42,7 +43,7 @@ public interface IReservacionjpa extends JpaRepository<Reservacion, Integer> {
 			 "as cliente, c.telefono, c.email from clientes c inner join reservacion re "+
 			 "on c.id_cliente=re.id_cliente where re.estado = 'PENDIENTE' and re.id_reserva in "+
 			 " (SELECT DISTINCT(id_reserva) from reserva_hab where fecha_llegada=CURRENT_DATE)", nativeQuery = true)
-     List<ReservacionesPendDia> obtenerReservasPendientesHoy();
+     List<Object[]> obtenerReservasPendientesHoy();
 	 
 	 
 	 
@@ -64,4 +65,23 @@ public interface IReservacionjpa extends JpaRepository<Reservacion, Integer> {
 	 @Query(value="select id_cliente from reservacion where id_reserva=:idReserva", nativeQuery=true)
 	 int obtIdClienteReserva(@Param("idReserva") int idReserva);
 
+	 
+	 @Query(value="SELECT "
+	 		+ "    r.id_reserva,"
+	 		+ "    r.estado,"
+	 		+ "    c.nombre AS nombre_cliente,"
+	 		+ "    c.ap_pat,"
+	 		+ "    c.ap_mat,"
+	 		+ "    COUNT(rh.id_hab) AS cantidad_habitaciones "
+	 		+ "FROM"
+	 		+ "    reservacion r "
+	 		+ "JOIN"
+	 		+ "    clientes c ON r.id_cliente = c.id_cliente "
+	 		+ "LEFT JOIN"
+	 		+ "    reserva_hab rh ON r.id_reserva = rh.id_reserva "
+	 		+ "WHERE"
+	 		+ "    r.estado = 'PENDIENTE' "
+	 		+ "GROUP BY"
+	 		+ "    r.id_reserva, r.estado, c.nombre, c.ap_pat, c.ap_mat", nativeQuery=true)
+	 List<Object[]> reservasPendientesAll();
 }

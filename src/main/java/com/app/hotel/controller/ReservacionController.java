@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.app.hotel.dto.NewReservacionPL;
 import com.app.hotel.dto.ReservacionesPendDia;
+import com.app.hotel.dto.ReservasPendientesData;
 import com.app.hotel.entity.Reservacion;
 import com.app.hotel.service.IReservacionService;
 
@@ -42,8 +43,13 @@ public class ReservacionController {
 		
 	}
 	
+	@GetMapping("/reservas/pendientesAll")
+	public List<Object[]> showAllReservasPendientes(){
+		return servReservacion.reservasPendientesAll();
+	}
+	
 	@GetMapping("/reservas/pendientesdDia")
-	public List<ReservacionesPendDia> obtenerReservasPendientesHoy(){
+	public List<Object[]> obtenerReservasPendientesHoy(){
 		return servReservacion.obtenerReservasPendientesHoy();
 	}
 	

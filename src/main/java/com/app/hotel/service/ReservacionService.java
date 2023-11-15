@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.app.hotel.dto.ReservacionesPendDia;
+import com.app.hotel.dto.ReservasPendientesData;
 import com.app.hotel.entity.Reservacion;
 import com.app.hotel.jpa.IReservacionjpa;
 
@@ -32,7 +33,7 @@ public class ReservacionService implements IReservacionService {
 	}
 	
 	@Override
-	public List<ReservacionesPendDia> obtenerReservasPendientesHoy(){
+	public List<Object[]> obtenerReservasPendientesHoy(){
 		return repoReserva.obtenerReservasPendientesHoy();
 	}
 	
@@ -40,8 +41,6 @@ public class ReservacionService implements IReservacionService {
 	public String actualizarEstadoReservacion(int idReserva) {
 		return repoReserva.actualizarEstadoReservacion(idReserva, null);
 	}
-	
-	
 	
 	@Override
 	public Integer disponibilidad(int idthab, Date fechSalida, Date fechLlegada) {
@@ -51,5 +50,10 @@ public class ReservacionService implements IReservacionService {
 	@Override
 	public Integer obtIdClienteReserva(int idReserva) {
 		return repoReserva.obtIdClienteReserva(idReserva);
+	}
+	
+	@Override
+	public List<Object[]> reservasPendientesAll(){
+		return repoReserva.reservasPendientesAll();
 	}
 }

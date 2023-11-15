@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.util.List;
 
 import com.app.hotel.dto.ReservacionesPendDia;
+import com.app.hotel.dto.ReservasPendientesData;
 import com.app.hotel.entity.Reservacion;
 
 public interface IReservacionService {
@@ -15,7 +16,7 @@ public interface IReservacionService {
 
 	List<Reservacion> consultaGralReservacion();
 
-	List<ReservacionesPendDia> obtenerReservasPendientesHoy();
+	List<Object[]> obtenerReservasPendientesHoy();
 
 	Integer disponibilidad(int idthab, Date fechSalida, Date fechLlegada);
 
@@ -24,5 +25,7 @@ public interface IReservacionService {
 //	ResponseEntity<Map<String, String>> actualizarEstadoReservacion(Reservacion obj, int idReserva);
 
 	String actualizarEstadoReservacion(int idReserva);
+
+	List<Object[]> reservasPendientesAll();
 
 }
