@@ -16,7 +16,7 @@ import com.app.hotel.entity.Reservacion;
 @Repository
 public interface IReservacionjpa extends JpaRepository<Reservacion, Integer> {
 	
-	 @Procedure(procedureName= "verificar_disponibilidad")
+	@Query(value= "call verificar_disponibilidad(:pfecha_llegada, :pfecha_salida, :ptipo_habitacion, :pcantidad_solicitada, :res)", nativeQuery=true)
 	    Integer verificarDisponibilidad(
 	        @Param("pfecha_llegada") Date fechaLlegada,
 	        @Param("pfecha_salida") Date fechaSalida,
@@ -24,6 +24,7 @@ public interface IReservacionjpa extends JpaRepository<Reservacion, Integer> {
 	        @Param("pcantidad_solicitada") Integer cantidadSolicitada,
 	        @Param("res") Integer resultado
 	    );
+	 
 	 
 	 
 	 @Procedure(procedureName= "procesoReservacion")
