@@ -29,7 +29,7 @@ public class ReservaHabController {
 	}
 	
 	@PostMapping("/reservasHab/newReservaHab")
-	public ResponseEntity<Integer> newReservaHab(@RequestBody NewReservaHabPL obj){
+	public ResponseEntity<String> newReservaHab(@RequestBody NewReservaHabPL obj){
         return ResponseEntity.ok(servReservacionHab.newReservaHab(obj.getFechaLlegada(), obj.getFechaSalida(), obj.getTipoHab()));
     }
 }

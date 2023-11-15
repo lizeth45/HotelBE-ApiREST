@@ -7,7 +7,7 @@ import com.app.hotel.entity.ReservaHab;
 
 public interface IReservacionHabService {
 
-	Integer newReservaHab(Date fechaLlegada, Date fechaSalida, String tipoHab);
+	String newReservaHab(Date fechaLlegada, Date fechaSalida, String tipoHab);
 
 	List<ReservaHab> consultaGral();
 

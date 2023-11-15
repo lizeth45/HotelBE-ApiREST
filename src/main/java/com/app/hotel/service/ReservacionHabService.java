@@ -21,7 +21,7 @@ public class ReservacionHabService implements IReservacionHabService{
 	}
 	
 	@Override
-	public Integer newReservaHab(Date fechaLlegada, Date fechaSalida, String tipoHab) {
+	public String newReservaHab(Date fechaLlegada, Date fechaSalida, String tipoHab) {
 		return repoReservaHab.procesoReservacionHab(fechaLlegada, fechaSalida, tipoHab, null);
 	}
 }
