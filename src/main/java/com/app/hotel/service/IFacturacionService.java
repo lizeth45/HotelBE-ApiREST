@@ -19,4 +19,6 @@ public interface IFacturacionService {
 
 	List<Facturacion> consultaFacturacionId(int idFact);
 
+	String facturar_finalEstancia(int idEstancia);
+
 }

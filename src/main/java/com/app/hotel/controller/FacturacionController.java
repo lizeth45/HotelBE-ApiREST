@@ -38,6 +38,10 @@ public class FacturacionController {
 		return servFactura.consultaFacturacionId(idFact);
 	}
 	
+	@PostMapping("/factura/finEstancia/{idEstancia}")
+	public String facturar_finalizarestancia(@PathVariable("idEstancia") int idEstancia) {
+		return servFactura.facturar_finalEstancia(idEstancia);
+	}
 	
 	@PostMapping("/factura")
 	public String insertarFactura(@RequestBody Facturacion obj){

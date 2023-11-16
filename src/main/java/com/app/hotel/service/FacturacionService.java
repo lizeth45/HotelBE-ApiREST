@@ -37,6 +37,12 @@ public class FacturacionService implements IFacturacionService{
 		return new ResponseEntity<>(okResponse,HttpStatus.CREATED);
 	}
 	
+	
+	@Override
+	public String facturar_finalEstancia(int idEstancia) {
+		return repoFacturacion.facturar_finalizarestancia(idEstancia, null);
+	}
+	
 	@Override
 	public ResponseEntity<Map<String, String>> updateFact(Facturacion obj, int idFact){
 		Map<String, String> okResponse = new HashMap<>();

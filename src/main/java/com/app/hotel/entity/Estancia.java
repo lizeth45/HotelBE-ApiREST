@@ -22,7 +22,7 @@ public class Estancia {
 	private int idEstancia;
 
 	@Column(name = "dias")
-	private int diasEstancia;
+	private Integer diasEstancia;
 
 	@Column(name = "fecha_llegada")
 	private Date fechaLlegadaEstancia;
@@ -46,7 +46,7 @@ public class Estancia {
 	@JoinColumn(name = "id_reserva", referencedColumnName = "id_reserva")
 	private Reservacion reservacion;
 
-	public Estancia(int diasEstancia, Date fechaLlegadaEstancia, Time horaLlegadaEstancia,
+	public Estancia(Integer diasEstancia, Date fechaLlegadaEstancia, Time horaLlegadaEstancia,
 			Date fechaSalidaEstancia, Time horaSalidaEstacia, Cliente cliente, Reservacion reservacion) {
 		super();
 		this.diasEstancia = diasEstancia;
@@ -67,11 +67,11 @@ public class Estancia {
 		return idEstancia;
 	}
 
-	public void setIdEstancia(int idEstancia) {
+	public void setIdEstancia(Integer idEstancia) {
 		this.idEstancia = idEstancia;
 	}
 
-	public int getDiasEstancia() {
+	public Integer getDiasEstancia() {
 		return diasEstancia;
 	}
 
