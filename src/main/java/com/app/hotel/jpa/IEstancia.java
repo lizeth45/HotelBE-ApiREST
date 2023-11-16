@@ -13,6 +13,6 @@ public interface IEstancia extends JpaRepository< Estancia, Integer>{
 	 @Query("SELECT c FROM Estancia c WHERE c.idEstancia = :id")
 	  List<Estancia> buscarPorId(@Param("id") int id);
 	 
-	 @Query("SELECT MAX(c.idEstancia) FROM Estancia c")
+	 @Query("SELECT c from Estancia c  where c.idEstancia = (select max(idEstancia) from Estancia)")
 	  List<Estancia> ultimoIdEstancia();
 }
