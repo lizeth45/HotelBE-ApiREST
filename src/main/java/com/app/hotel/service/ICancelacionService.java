@@ -10,4 +10,6 @@ public interface ICancelacionService {
 
 	List<Cancelacion> consultaCancelacionId(int idCancelacion);
 
+	String insertCancelacion(int idReserva, String motivo);
+
 }

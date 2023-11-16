@@ -20,6 +20,11 @@ public class CancelacionService implements ICancelacionService{
 	}
 	
 	@Override
+	public String insertCancelacion(int idReserva, String motivo) {
+		return repoCancelacion.procesoCancelacion(idReserva, motivo, null);
+	}
+	
+	@Override
 	public List<Cancelacion> consultaCancelacionId(int idCancelacion){
 		return repoCancelacion.buscarPorId(idCancelacion);
 	}
