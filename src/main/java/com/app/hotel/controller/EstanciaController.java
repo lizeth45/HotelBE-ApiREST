@@ -30,6 +30,11 @@ public class EstanciaController {
 		return servEstancia.consultaGral();
 	}
 	
+	@GetMapping("/estancia/lastID")
+	public List<Estancia> ultimoIdEstancia(){  
+		return servEstancia.ultimoIDEstancia();
+	}
+	
 	@GetMapping("/estancia/{id}")
 	public List<Estancia> showEstanciaID( @PathVariable("id")int idEstancia)
 	{

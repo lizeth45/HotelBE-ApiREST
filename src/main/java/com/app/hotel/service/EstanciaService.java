@@ -28,6 +28,10 @@ public class EstanciaService implements IEstanciaService{
 		return repoEstancia.buscarPorId(idEstancia);
 	}
 	
+	@Override
+	public List<Estancia> ultimoIDEstancia(){
+		return repoEstancia.ultimoIdEstancia();
+	}
 	
 	@Override
 	public ResponseEntity<Map<String, String>> newEstancia(Estancia obj) {

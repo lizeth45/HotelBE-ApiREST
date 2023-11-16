@@ -17,4 +17,6 @@ public interface IEstanciaService {
 
 	ResponseEntity<Map<String, String>> newEstancia(Estancia obj);
 
+	List<Estancia> ultimoIDEstancia();
+
 }

@@ -33,7 +33,7 @@ public class ReservaHab {
 	@Column(name="hora_reserva", columnDefinition = "time DEFAULT CURRENT_TIME")
 	private Time horaReserva;
 
-	@Column(name="fecha_llegada", columnDefinition = "date CHECK (fecha_llegada >= CURRENT_DATE)")
+	@Column(name="fecha_llegada")
 	private Date fechaLlegada;
 
 	@Column(name="fecha_salida", columnDefinition = "date CHECK (fecha_salida > fecha_llegada)")

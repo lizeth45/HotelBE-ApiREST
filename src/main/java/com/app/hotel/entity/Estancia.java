@@ -30,10 +30,10 @@ public class Estancia {
 	@Column(name = "hora_llegada")
 	private Time horaLlegadaEstancia;
 
-	@Column(name = "fecha_salida", columnDefinition = "date CHECK (fecha_salida >= fecha_llegada)")
+	@Column(name = "fecha_salida")
 	private Date fechaSalidaEstancia;
 
-	@Column(name = "hora_salida", columnDefinition = "time CHECK (hora_salida > hora_llegada)")
+	@Column(name = "hora_salida")
 	private Time horaSalidaEstacia;
 
 	// Relacion hacia la tabla de cliente <- estancia
