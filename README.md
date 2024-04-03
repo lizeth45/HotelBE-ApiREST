@@ -13,6 +13,7 @@ Desarrollada para que el usuario administrador pueda realizar las acciones basic
   <li>Facturacion de estancias</li>
   <li>...</li>
 </ul>
+
 # Sitio web
 Sitio web donde se hace uso de esta ApiRest <br>
 <a href="https://hotel-buena-estancia.vercel.app/#/landing">Click me</a>
